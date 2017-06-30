@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201706301714401_override-conventions-for-gig-and-genre.Designer.cs">
       <DependentUpon>201706301714401_override-conventions-for-gig-and-genre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706301739418_populate-genres-table.cs" />
+    <Compile Include="Migrations\201706301739418_populate-genres-table.Designer.cs">
+      <DependentUpon>201706301739418_populate-genres-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -301,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706301714401_override-conventions-for-gig-and-genre.resx">
       <DependentUpon>201706301714401_override-conventions-for-gig-and-genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706301739418_populate-genres-table.resx">
+      <DependentUpon>201706301739418_populate-genres-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
