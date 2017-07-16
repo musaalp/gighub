@@ -8,6 +8,7 @@ namespace GigHub.ViewModels
     {
         public override bool IsValid(object value)
         {
+            //sample of time format should come from client: 01:45 or 13:20
             DateTime datetime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
                 "HH:mm",
