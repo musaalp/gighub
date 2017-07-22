@@ -1,8 +1,8 @@
 ﻿using GigHub.Models;
-using System.Web.Mvc;
+using System;
 using System.Data.Entity;
 using System.Linq;
-using System;
+using System.Web.Mvc;
 
 namespace GigHub.Controllers
 {
@@ -18,6 +18,7 @@ namespace GigHub.Controllers
         {
             var upComingGigs = _context.Gigs
                 .Include(g => g.Artist)
+                .Include(g=> g.Genre)
                 .Where(a => a.DateTime > DateTime.Now);
 
             return View(upComingGigs);
