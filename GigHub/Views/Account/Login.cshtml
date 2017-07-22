@@ -1,5 +1,6 @@
-﻿@using GigHub.Models
-@model LoginViewModel
+﻿@model GigHub.ViewModels.LoginViewModel
+@using GigHub.ViewModels
+
 @{
     ViewBag.Title = "Log in";
 }
@@ -52,10 +53,10 @@
         </section>
     </div>
     <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+        <section id="socialLoginForm">            
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })            
+    </section>
+</div>
 </div>
 
 @section Scripts {
