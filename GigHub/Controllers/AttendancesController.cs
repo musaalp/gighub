@@ -22,9 +22,9 @@ namespace GigHub.Controllers
         public IHttpActionResult Attend(AttendanceDto dto)
         {
             var userId = User.Identity.GetUserId();
-            var exists = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId);
+            var IsAttendanceExists = _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId);
 
-            if (exists)
+            if (IsAttendanceExists)
             {
                 return BadRequest("The attendance alread exist");
             }
