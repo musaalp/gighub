@@ -195,7 +195,6 @@ C:\Users\Alp\Source\GigHub\GigHub\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Alp\Source\GigHub\GigHub\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Alp\Source\GigHub\GigHub\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Alp\Source\GigHub\GigHub\bin\Microsoft.AI.Web.xml
-C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.Migrations.initial_db.resources
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.Migrations.creategigtable.resources
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.Migrations.overrideconventionsforgigandgenre.resources
