@@ -207,3 +207,4 @@ C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.csproj.GenerateResource.Cache
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
+C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledToGig.resources
