@@ -209,3 +209,5 @@ C:\Users\Alp\Source\GigHub\GigHub\bin\Microsoft.AI.Web.xml
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
+C:\Users\Alp\Source\GigHub\GigHub\bin\AutoMapper.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\AutoMapper.xml

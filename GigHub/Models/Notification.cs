@@ -12,7 +12,12 @@ namespace GigHub.Models
 
         private Notification(Gig gig, NotificationType type)
         {
-            Gig = gig ?? throw new ArgumentNullException("gig");
+            if (gig == null)
+            {
+                throw new ArgumentNullException("gig");
+            }
+
+            Gig = gig;
             Type = type;
             DateTime = DateTime.Now;
         }
