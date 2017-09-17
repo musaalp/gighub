@@ -39,24 +39,20 @@
                     {
                         <span class="label label-warning">Canceled</span>
                     }
-
-                    @if (Model.ShowActions)
-                    {
-                        <button data-followee-id="@gig.ArtistId" class="btn btn-link btn-sm js-toggle-follow">Follow</button>
-                    }
                 </span>
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
                 @if (Model.ShowActions && !gig.IsCanceled)
                 {
-                    <button 
-                            data-gig-id="@gig.Id" 
-                            class="btn 
-                                @(Model.Attendaces.Contains(gig.Id)? "btn-info": "btn-default") 
-                                btn-sm pull-right js-toggle-attendance">
-                        Going ?
-                    </button>
+                    if (Model.Attendaces.Contains(gig.Id))
+                    {
+                        <button data-gig-id="@gig.Id" class="btn btn-info btn-sm js-toggle-attendance">Going</button>
+                    }
+                    else
+                    {
+                        <button data-gig-id="@gig.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                    }
                 }
             </div>
         </li>
@@ -67,21 +63,7 @@
 {
     <script>
         $(document).ready(function () {
-            
-            GigsController.init("#gigs");            
-            
-
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);                
-
-                $.post("/api/followings", { FolloweeId: button.attr("data-followee-id") })
-                    .done(function () {
-                        button.text("Following")
-                    })
-                    .fail(function () {
-                        alert("Something failed!");
-                    });
-            });
+            GigsController.init("#gigs");
         })
     </script>
 }

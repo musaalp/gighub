@@ -11,13 +11,12 @@
     {
         if (Model.IsFollowing)
         {
-            <button class="btn btn-info">Following</button>
+            <button data-followee-id="@Model.Gig.ArtistId" class="btn btn-info js-toggle-follow">Following</button>
         }
         else
         {
-            <button data-followee-id="@Model.Gig.ArtistId" class="btn btn-link btn-sm js-toggle-follow">Follow</button>
+            <button data-followee-id="@Model.Gig.ArtistId" class="btn btn-default js-toggle-follow">Follow</button>
         }
-
     }
 </h2>
 
@@ -32,18 +31,7 @@
 {
     <script>
         $(document).ready(function () {
-
-            $(".js-toggle-follow").click(function (e) {
-                var button = $(e.target);
-
-                $.post("/api/followings", { FolloweeId: button.attr("data-followee-id") })
-                    .done(function () {
-                        button.text("Following")
-                    })
-                    .fail(function () {
-                        alert("Something failed!");
-                    });
-            });
+            GigDetailsController.init();
         })
     </script>
 }
