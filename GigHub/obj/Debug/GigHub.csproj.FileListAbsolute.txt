@@ -211,3 +211,14 @@ C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\Alp\Source\GigHub\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
 C:\Users\Alp\Source\GigHub\GigHub\bin\AutoMapper.dll
 C:\Users\Alp\Source\GigHub\GigHub\bin\AutoMapper.xml
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Extensions.Conventions.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.Common.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.Mvc.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.WebApi.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\WebActivatorEx.dll
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.xml
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Extensions.Conventions.xml
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.Common.xml
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.Mvc.xml
+C:\Users\Alp\Source\GigHub\GigHub\bin\Ninject.Web.WebApi.xml
