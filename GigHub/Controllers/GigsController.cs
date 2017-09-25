@@ -20,7 +20,8 @@ namespace GigHub.Controllers
         public ActionResult Mine()
         {
             var userId = User.Identity.GetUserId();
-            var gigs = _unitOfWork.Gigs.GetUpcomingGigsByUserId(userId);
+
+            var gigs = _unitOfWork.Gigs.GetUpcomingGigsByArtist(userId);
 
             return View(gigs);
         }
@@ -124,10 +125,14 @@ namespace GigHub.Controllers
             var gig = _unitOfWork.Gigs.GetGigWithAttendees(viewModel.Id);
 
             if (gig == null)
+            {
                 return HttpNotFound();
+            }
 
             if (gig.ArtistId != User.Identity.GetUserId())
+            {
                 return new HttpUnauthorizedResult();
+            }
 
             gig.Modify(viewModel.GetDateTime(), viewModel.Venue, viewModel.Genre);
 
@@ -141,7 +146,9 @@ namespace GigHub.Controllers
             var gig = _unitOfWork.Gigs.GetGig(id);
 
             if (gig == null)
+            {
                 return HttpNotFound();
+            }
 
             var viewModel = new GigDetailsViewModel
             {
@@ -156,7 +163,7 @@ namespace GigHub.Controllers
                 viewModel.IsFollowing = _unitOfWork.Followings.GetFollowing(gig.ArtistId, userId) != null;
             }
 
-            return View(viewModel);
+            return View("Details", viewModel);
         }
     }
 }

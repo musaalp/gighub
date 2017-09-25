@@ -18,5 +18,10 @@ namespace GigHub.Core.Repositories
             return _context.Followings
                     .SingleOrDefault(f => f.FolloweeId == followeeId && f.FollowerId == userId);
         }
+
+        public void Add(Following following)
+        {
+            _context.Followings.Add(following);
+        }
     }
 }

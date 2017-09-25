@@ -40,6 +40,5 @@ namespace GigHub.Core.Models
         {
             IsRead = true;
         }
-
     }
 }
