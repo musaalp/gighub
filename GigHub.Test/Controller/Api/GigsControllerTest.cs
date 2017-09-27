@@ -1,9 +1,11 @@
-﻿using GigHub.Controllers.Api;
+﻿using FluentAssertions;
+using GigHub.Controllers.Api;
 using GigHub.Core;
+using GigHub.Core.Repositories;
+using GigHub.Test.Controller.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Security.Claims;
-using System.Security.Principal;
+using System.Web.Http.Results;
 
 namespace GigHub.Test.Controller.Api
 {
@@ -14,22 +16,24 @@ namespace GigHub.Test.Controller.Api
 
         public GigsControllerTest()
         {
-            var identity = new GenericIdentity("user1@domain.com");
-            identity.AddClaim(new Claim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "user1@domain.com"));
-            identity.AddClaim(new Claim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "1"));
+            //{mockVariable}.Object means implemantation of abstraction
 
-            var principal = new GenericPrincipal(identity, null);
+            var mockRepository = new Mock<IGigRepository>();
 
             var mockUnitOfWork = new Mock<IUnitOfWork>();
+            mockUnitOfWork.SetupGet(u => u.Gigs).Returns(mockRepository.Object);
 
-            //mockUnitOfWork.Object means implemantation of IUnitOfwork
+            
             _controller = new GigsController(mockUnitOfWork.Object);
-            _controller.User = principal;
+            _controller.MockCurrentUser("1", "user1@domain.com");
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void Cancel_NoGigWithGivenIdExists_ShouldReturnNotFound()
         {
-        }
+            var result = _controller.Cancel(1);
+            
+            result.Should().BeOfType<NotFoundResult>();
+        }       
     }
 }
