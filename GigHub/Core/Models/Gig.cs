@@ -30,7 +30,7 @@ namespace GigHub.Core.Models
 
         public ICollection<Attendance> Attendances { get; private set; }
 
-        internal void Cancel()
+        public void Cancel()
         {
             this.IsCanceled = true;
 

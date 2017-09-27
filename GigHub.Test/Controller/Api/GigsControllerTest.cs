@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using GigHub.Controllers.Api;
 using GigHub.Core;
+using GigHub.Core.Models;
 using GigHub.Core.Repositories;
 using GigHub.Test.Controller.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,15 +14,16 @@ namespace GigHub.Test.Controller.Api
     public class GigsControllerTest
     {
         private readonly GigsController _controller;
+        private readonly Mock<IGigRepository> _mockRepository;
 
         public GigsControllerTest()
         {
             //{mockVariable}.Object means implemantation of abstraction
 
-            var mockRepository = new Mock<IGigRepository>();
+            _mockRepository = new Mock<IGigRepository>();
 
             var mockUnitOfWork = new Mock<IUnitOfWork>();
-            mockUnitOfWork.SetupGet(u => u.Gigs).Returns(mockRepository.Object);
+            mockUnitOfWork.SetupGet(u => u.Gigs).Returns(_mockRepository.Object);
 
             
             _controller = new GigsController(mockUnitOfWork.Object);
@@ -34,6 +36,18 @@ namespace GigHub.Test.Controller.Api
             var result = _controller.Cancel(1);
             
             result.Should().BeOfType<NotFoundResult>();
-        }       
+        }
+
+        [TestMethod]
+        public void Cancel_GigIsCanceled_ShouldReturnNotFound()
+        {
+            var gig = new Gig();
+            gig.Cancel();
+
+            _mockRepository.Setup(r => r.GetGigWithAttendees(It.IsAny<int>())).Returns(gig);
+
+            var result = _controller.Cancel(1);
+            result.Should().BeOfType<NotFoundResult>();
+        }
     }
 }

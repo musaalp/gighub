@@ -24,14 +24,14 @@ namespace GigHub.Controllers.Api
                 return NotFound();
             }
 
-            if (gig.ArtistId != User.Identity.GetUserId())
-            {
-                return Unauthorized();
-            }
-
             if (gig.IsCanceled)
             {
                 return NotFound();
+            }
+
+            if (gig.ArtistId != User.Identity.GetUserId())
+            {
+                return Unauthorized();
             }
 
             gig.Cancel();
