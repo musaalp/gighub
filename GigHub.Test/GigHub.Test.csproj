@@ -60,6 +60,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Api\AttendancesControllerTest.cs" />
     <Compile Include="Controller\Api\GigsControllerTest.cs" />
     <Compile Include="Controller\Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
