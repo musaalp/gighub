@@ -71,3 +71,6 @@ C:\Users\Alp\Source\gighub\GigHub.Test\bin\Debug\System.Web.WebPages.Deployment.
 C:\Users\Alp\Source\gighub\GigHub.Test\obj\Debug\GigHub.Test.csprojResolveAssemblyReference.cache
 C:\Users\Alp\Source\gighub\GigHub.Test\obj\Debug\GigHub.Test.dll
 C:\Users\Alp\Source\gighub\GigHub.Test\obj\Debug\GigHub.Test.pdb
+C:\Users\Alp\Source\gighub\GigHub.Test\bin\Debug\GigHub.Test.dll.config
+C:\Users\Alp\Source\gighub\GigHub.Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alp\Source\gighub\GigHub.Test\bin\Debug\EntityFramework.SqlServer.xml

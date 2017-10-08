@@ -5,7 +5,7 @@ using System.Data.Entity;
 
 namespace GigHub.Persistence
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -17,7 +17,7 @@ namespace GigHub.Persistence
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Following> Followings { get; set; }
         public DbSet<Notification> Notifications { get; set; }
-        public DbSet<UserNotification> UserNotifications { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }        
 
         public static ApplicationDbContext Create()
         {
@@ -29,10 +29,10 @@ namespace GigHub.Persistence
             modelBuilder.Configurations.Add(new ApplicationUserConfiguration());
             modelBuilder.Configurations.Add(new AttendanceConfiguration());
             modelBuilder.Configurations.Add(new FollowingConfiguration());
-            modelBuilder.Configurations.Add(new GenreConfiguration());            
+            modelBuilder.Configurations.Add(new GenreConfiguration());
             modelBuilder.Configurations.Add(new GigConfiguration());
             modelBuilder.Configurations.Add(new NotificationConfiguration());
-            modelBuilder.Configurations.Add(new UserNotificationConfiguration());            
+            modelBuilder.Configurations.Add(new UserNotificationConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -18,7 +18,7 @@ namespace GigHub.Test.Controller.Api
         private Mock<IGigRepository> _mockRepository;
         private string _userId = string.Empty;
 
-        //[TestInitialize]
+        [TestInitialize]
         public void TestInitialize()
         {
             //{mockVariable}.Object means implemantation of abstraction
