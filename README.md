@@ -1,1 +1,1 @@
-ABCD social platform for the music lover.
+A social platform for the music lover.
